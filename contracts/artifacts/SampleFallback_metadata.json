@@ -6,6 +6,23 @@
 	"output": {
 		"abi": [
 			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "lastvalueSent",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "ourString",
 				"outputs": [
@@ -19,17 +36,8 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_updateString",
-						"type": "string"
-					}
-				],
-				"name": "updateOurString",
-				"outputs": [],
 				"stateMutability": "payable",
-				"type": "function"
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -45,7 +53,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/MyContract.sol": "MyContract"
+			"contracts/SampleFallback.sol": "SampleFallback"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -59,12 +67,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/MyContract.sol": {
-			"keccak256": "0x15f17b8ecab5528151a6d31a2d9512b680d372703f83b14ddc06547762adb1a6",
+		"contracts/SampleFallback.sol": {
+			"keccak256": "0xae9c64357f9d94007b5edfd55faa857d16e6259ea827ca18943c967baae73d8a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f5e8d066196a1f3032b15a91c3b8604c75a180714b98fd9baf5a55eab9dd88ed",
-				"dweb:/ipfs/QmXjX9Cv2CbYkPLScos9U7LqUiGYTnAr8pLNKjFjmN5KdZ"
+				"bzz-raw://827171eb6d0258f3f0034848a4d094f00a591307c0e029cd3b85d15ca74b97d0",
+				"dweb:/ipfs/QmZbDbkARr9SBXe5pBUJcL1unT6SRnVsAcPyBLhwh2RxJ6"
 			]
 		}
 	},
