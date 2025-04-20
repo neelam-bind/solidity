@@ -4,7 +4,15 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -18,7 +26,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/exampleStruct.sol": "Exmapping"
+			"contracts/exampleStruct.sol": "WAllet"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -33,11 +41,11 @@
 	},
 	"sources": {
 		"contracts/exampleStruct.sol": {
-			"keccak256": "0x63e8fea6b6524bfe69b4341a7885790e2db365638337ffd69f07ab4ad789958a",
+			"keccak256": "0xee747481737ece88079e6b4cca9aff60400bd69d1071af46273e5c0da531ab34",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://10577eba9230971b4d8cb8feda0aa505b2a486a907b8ba3bdb01ea6ef93f2f21",
-				"dweb:/ipfs/QmaM6m8XTzkG55hssohZQ3eX9AbxPyKD89FZsAJ2a59CnV"
+				"bzz-raw://8150b731726e32654829c605ea72b06e98c960fe28c3d711580abc968ac51dc4",
+				"dweb:/ipfs/QmT2oWUqvLhLitMUMjkK2BX8kYn7GWk1JmhJmZjU8Nfgng"
 			]
 		}
 	},
