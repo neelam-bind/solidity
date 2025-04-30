@@ -6,44 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "DepositMade",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "WithdrawalMade",
-				"type": "event"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -109,7 +71,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Event.sol": "SimpleBank"
+			"contracts/simpleBank.sol": "SimpleBank"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -123,12 +85,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Event.sol": {
-			"keccak256": "0xa696f7d1ebd40c1c0cf803fd4271837cf5d4e1f09da4bea54d8fbe9a8568fb88",
+		"contracts/simpleBank.sol": {
+			"keccak256": "0xf11a0af5240e93dc01205e5a23f58a8b79ffc66c47e77f9a3fe85a1e6acc22ba",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b2d569d50cee7e81ee0f8ba1505ab19e1e3b7148cce4d3bbf37ea1777823448f",
-				"dweb:/ipfs/QmeSu8voKerQ3RpS5kU4GihXGMysBcNdMDGcoL4Tt2F6BZ"
+				"bzz-raw://57b56ae5564a83e5be473bda3684d57e9a66f4f522d303669d7fcb18a2860ef2",
+				"dweb:/ipfs/QmXFBVSqwLZnv7MNYmkjEBTn9bVRaKxmgNY4BCoPsqCR2s"
 			]
 		}
 	},

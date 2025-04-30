@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.17+commit.8df45f5f"
 	},
 	"language": "Solidity",
 	"output": {
@@ -13,36 +13,22 @@
 						"type": "address"
 					}
 				],
-				"name": "myAddressMapping",
+				"name": "balances",
 				"outputs": [
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "totalBalance",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "numDeposits",
 						"type": "uint256"
-					}
-				],
-				"name": "myMap",
-				"outputs": [
+					},
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "numWithdrawals",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -51,17 +37,34 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_numDeposit",
 						"type": "uint256"
 					}
 				],
-				"name": "myMapping",
+				"name": "depositeMoney",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ExampleMappingStruct.Transaction",
 						"name": "",
-						"type": "bool"
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -69,20 +72,25 @@
 			},
 			{
 				"inputs": [],
-				"name": "setMyAddressMap",
+				"name": "depositeMoney",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
-						"name": "_index",
+						"name": "_amount",
 						"type": "uint256"
 					}
 				],
-				"name": "setMyMap",
+				"name": "withdrawMoney",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -101,9 +109,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Exmapping.sol": "Exmapping"
+			"contracts/ExampleMappingStruct.sol": "ExampleMappingStruct"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -115,12 +123,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Exmapping.sol": {
-			"keccak256": "0x476314315332886421611c4f0e61119120388288d801701495a539bc592e772e",
+		"contracts/ExampleMappingStruct.sol": {
+			"keccak256": "0xf47974c352d4b78a3f7102d7e913e14481f01596de1fcbe36196e5e05f67fb74",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68b77336249fff9d14adc2c3be423247ff3db1078ae2dd6b259632bab960291c",
-				"dweb:/ipfs/Qme3SXKL9mbNybxr3zyWzCSxe2kR4vmqzGMGGu4Z71bTNf"
+				"bzz-raw://1a58e9f6809612a9430a4d6ac77cc8f64c4ca6524ee3bdf8a6a242c0976a636a",
+				"dweb:/ipfs/QmW9CZwsZPsLinwzs1KTxc6Ah1JPfvdym776XJQpXaug5w"
 			]
 		}
 	},

@@ -61,7 +61,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/exampleStruct.sol": "paymentReceived"
+			"contracts/examplecontract.sol": "paymentRecieved"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -75,12 +75,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/exampleStruct.sol": {
-			"keccak256": "0xa93a6c343541e27581d4c89d72ed8b947661ba85c875f8dcc0e98ebd00392cf2",
+		"contracts/examplecontract.sol": {
+			"keccak256": "0x58b1078e59ee26c9b629d8d286ca700fb56adfd735982417b14aa3018595fd51",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9bd027b7a9371deca2ddb4dc782a23d63b5ba74f5745db3923744bfa6a698398",
-				"dweb:/ipfs/QmT5fwryXXKuzYvdkBcQ7xkPAg76YvpXANwsWTsyaCYq1Y"
+				"bzz-raw://e963f9bed20ea2fe39f16e3e741381d68e21bb28aa21a5ae720728c1d0d2afa5",
+				"dweb:/ipfs/QmVJ73bS4LM4m5JPMmvJ4BF2noTRu7wyJQYWxZDHJfvMrv"
 			]
 		}
 	},
