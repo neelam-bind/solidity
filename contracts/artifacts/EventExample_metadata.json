@@ -6,93 +6,76 @@
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "DepositMade",
-				"type": "event"
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			},
 			{
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
+						"indexed": false,
 						"internalType": "address",
-						"name": "to",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_to",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "_amount",
 						"type": "uint256"
 					}
 				],
-				"name": "WithdrawalMade",
+				"name": "Tokensent",
 				"type": "event"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "",
+						"name": "_to",
 						"type": "address"
-					}
-				],
-				"name": "balances",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
+					},
 					{
 						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
 					}
 				],
-				"name": "withdraw",
-				"outputs": [],
+				"name": "sendToken",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "tokenBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -109,7 +92,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Event.sol": "SimpleBank"
+			"contracts/sampleEvent.sol": "EventExample"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -123,12 +106,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Event.sol": {
-			"keccak256": "0xa696f7d1ebd40c1c0cf803fd4271837cf5d4e1f09da4bea54d8fbe9a8568fb88",
+		"contracts/sampleEvent.sol": {
+			"keccak256": "0xd0ec390b8eb9e48ababac694c5ccdc56825fae29cd39b6aae36ade5fe5aa7da8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b2d569d50cee7e81ee0f8ba1505ab19e1e3b7148cce4d3bbf37ea1777823448f",
-				"dweb:/ipfs/QmeSu8voKerQ3RpS5kU4GihXGMysBcNdMDGcoL4Tt2F6BZ"
+				"bzz-raw://185ffac4b4ee245f256727a0697b093dbbb263e0352010a60285c4866359a913",
+				"dweb:/ipfs/QmTPLLnip61B8FB4Z6ag7EE4QAuNkJjy63LMGmwbHi6JJZ"
 			]
 		}
 	},
