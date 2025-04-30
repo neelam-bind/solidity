@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Token Event Listener</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, button { padding: 10px; margin: 5px 0; width: 300px; }
+    .eventResult { margin-top: 20px; background: #f4f4f4; padding: 15px; }
+  </style>
+</head>
+<body>
+
+  <h2>MetaMask Token Event Listener (Web3.js)</h2>
+
+  <button class="enableMetamask">Enable MetaMask</button>
+  <p class="statusText">Status: Not connected</p>
+
+  <input type="text" id="address" placeholder="Contract Address" />
+  <button class="startStopEventListener" disabled>Listen to Events</button>
+
+  <div class="eventResult">
+    <strong>Events:</strong>
+    <div id="eventsLog"></div>
+  </div>
+
+  <script>
+    const enableMetaMaskButton = document.querySelector('.enableMetamask');
+    const statusText = document.querySelector('.statusText');
+    const listenToEventsButton = document.querySelector('.startStopEventListener');
+    const contractAddrInput = document.getElementById('address');
+    const eventsLog = document.getElementById('eventsLog');
+
+    let web3;
+    let accounts = [];
+    let contractInstance;
+    let listening = false;
+
+    const abi = [
+      {
+        "anonymous": false,
+        "inputs": [
+          { "indexed": false, "internalType": "address", "name": "_from", "type": "address" },
+          { "indexed": false, "internalType": "address", "name": "_to", "type": "address" },
+          { "indexed": false, "internalType": "uint256", "name": "_amount", "type": "uint256" }
+        ],
+        "name": "Tokensent",
+        "type": "event"
+      },
+      {
+        "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+        "name": "tokenBalance",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ];
+
+    enableMetaMaskButton.addEventListener('click', async () => {
+      if (window.ethereum) {
+        web3 = new Web3(window.ethereum);
+        try {
+          accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+          statusText.textContent = `Connected: ${accounts[0]}`;
+          listenToEventsButton.disabled = false;
+        } catch (err) {
+          statusText.textContent = `Connection Error: ${err.message}`;
+        }
+      } else {
+        alert('MetaMask is not installed');
+      }
+    });
+
+    listenToEventsButton.addEventListener('click', async () => {
+      const contractAddress = contractAddrInput.value.trim();
+      if (!contractAddress) {
+        alert("Please enter a contract address");
+        return;
+      }
+
+      if (!web3) {
+        alert("Web3 not initialized. Connect MetaMask first.");
+        return;
+      }
+
+      contractInstance = new web3.eth.Contract(abi, contractAddress);
+
+      if (!listening) {
+        // Past events
+        contractInstance.getPastEvents("Tokensent", { fromBlock: 0, toBlock: "latest" })
+          .then(events => {
+            eventsLog.innerHTML = '';
+            events.forEach(e => {
+              const log = `PAST — From: ${e.returnValues._from}, To: ${e.returnValues._to}, Amount: ${e.returnValues._amount}`;
+              eventsLog.innerHTML += `<p>${log}</p>`;
+            });
+          });
+
+        // Live events
+        contractInstance.events.Tokensent()
+          .on('data', e => {
+            const log = `LIVE — From: ${e.returnValues._from}, To: ${e.returnValues._to}, Amount: ${e.returnValues._amount}`;
+            eventsLog.innerHTML += `<p>${log}</p>`;
+          })
+          .on('error', err => console.error(err));
+
+        listenToEventsButton.textContent = "Listening...";
+        listenToEventsButton.disabled = true;
+        listening = true;
+      }
+    });
+  </script>
+</body>
+</html>
